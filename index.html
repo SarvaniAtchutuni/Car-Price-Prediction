@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body bgcolor="LightSeaGreen">
+ <div class="login">
+	<center><h2>WELCOME TO<br>CAR PRICE PREDICTION</h2><center/>
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<center><input type="text" name = "horsepower"placeholder="Horsepower" required="required" /><center/>
+
+        <center><input type="text" name="carwidth" placeholder="Carwidth" required="required" /><center/>
+
+        <center><input type="text" name="enginetype_dohcv" placeholder="Enginetype_dohcv" required="required" /><center/>
+
+        <center><input type="text" name="cylindernumber_four" placeholder="Cylindernumber_four" required="required" /><center/>
+
+        <center><input type="text" name="range_Highend" placeholder="Range_Highend" required="required" /><center/>
+
+        <center><button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><center/>
+    </form>
+
+   <br>
+   <br>
+  <center>{{ prediction_text }}<center>
+
+ </div>
+
+    </style>
+</body>
+
+</html>
